@@ -1,4 +1,6 @@
-﻿namespace CustomerOrder
+﻿using Microsoft.Extensions.Configuration;
+
+namespace CustomerOrder
 {
     //Custom service Greetings
     public interface IGreeter
@@ -8,10 +10,17 @@
 
     public class Greeter : IGreeter
     {
-        //public Greeter(IConfigu)
+        private IConfiguration _configuration;
+
+        public Greeter(IConfiguration configuration)
+        {// This service:  IConfiguration configuration is registred
+         // by defaul web host builder
+            _configuration = configuration;
+        }
         public string GetMessageOfTheDay()
         {
-            return "Greetings!! GG - Dev Alin Batrin";
+            return _configuration["Greeting"];
+            // f(key) = value 
         }
     }
 }
