@@ -12,15 +12,18 @@ namespace CustomerOrder
     {
         private IConfiguration _configuration;
 
+
+        // This service:  IConfiguration configuration is registred
+        // by defaul web host builder
         public Greeter(IConfiguration configuration)
-        {// This service:  IConfiguration configuration is registred
-         // by defaul web host builder
+        {
             _configuration = configuration;
         }
+
+        // f(key) = value 
         public string GetMessageOfTheDay()
         {
             return _configuration["Greeting"];
-            // f(key) = value 
         }
     }
 }

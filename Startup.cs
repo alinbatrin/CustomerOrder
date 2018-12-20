@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace CustomerOrder
 {
@@ -22,19 +23,43 @@ namespace CustomerOrder
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, 
                               IHostingEnvironment env, 
-                              IGreeter greeter
+                              IGreeter greeter,
+                              ILogger<Startup> logger
                               )
         {
-            if (env.IsDevelopment())
+            //if (env.IsDevelopment())
+            //{
+            //    app.UseDeveloperExceptionPage();
+            //}
+
+            app.Use(next =>
             {
-                app.UseDeveloperExceptionPage();
-            }
+                return async context =>
+                {
+                    //This is my Middleware start
+                    logger.LogInformation("Request incomming");
+                    if (context.Request.Path.StartsWithSegments("/mym"))
+                    {
+                        await context.Response.WriteAsync("Hit the road JACK!!");
+                        logger.LogInformation("Request handled");
+                    }
+                    else
+                    {
+                        await next(context);
+                        logger.LogInformation("Response outgoing");
+                    }
+                    //This is my Middleware end
+                };
+            });
+
+            app.UseWelcomePage(new WelcomePageOptions {
+                Path = "/welcomePage"
+            });
 
             app.Run(async (context) =>
             {
-                //Dependenci injection of my service made on the line 25, 36. 
-                //No need of the word new().
-                //Big advantage
+                //Dependency injection of my service made on the line 25, 36. 
+                //No need of the word new() .Big advantage.
                 var greeting = greeter.GetMessageOfTheDay();
                 await context.Response.WriteAsync(greeting);
             });
