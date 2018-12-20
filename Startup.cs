@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CustomerOrder
@@ -18,7 +19,10 @@ namespace CustomerOrder
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, 
+                              IHostingEnvironment env, 
+                              IConfiguration configuration
+                              )
         {
             if (env.IsDevelopment())
             {
@@ -27,7 +31,8 @@ namespace CustomerOrder
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World! Dev Alin-BATRIN Clasic.");
+                var greeting = configuration["Greeting"];
+                await context.Response.WriteAsync(greeting);
             });
         }
     }
