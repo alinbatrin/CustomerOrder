@@ -27,7 +27,7 @@ namespace CustomerOrder
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World! Dev Alin-BATRIN");
+                await context.Response.WriteAsync("Hello World! Dev Alin-BATRIN Clasic.");
             });
         }
     }
