@@ -27,41 +27,16 @@ namespace CustomerOrder
                               ILogger<Startup> logger
                               )
         {
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //}
-
-            app.Use(next =>
+            if (env.IsDevelopment())
             {
-                return async context =>
-                {
-                    //This is my Middleware start
-                    logger.LogInformation("Request incomming");
-                    if (context.Request.Path.StartsWithSegments("/mym"))
-                    {
-                        await context.Response.WriteAsync("Hit the road JACK!!");
-                        logger.LogInformation("Request handled");
-                    }
-                    else
-                    {
-                        await next(context);
-                        logger.LogInformation("Response outgoing");
-                    }
-                    //This is my Middleware end
-                };
-            });
-
-            app.UseWelcomePage(new WelcomePageOptions {
-                Path = "/welcomePage"
-            });
+                app.UseDeveloperExceptionPage();
+            }
 
             app.Run(async (context) =>
             {
-                //Dependency injection of my service made on the line 25, 36. 
-                //No need of the word new() .Big advantage.
+                //Dependency injection of my service made on the line 25, 36. No need of the word new() .Big advantage.
                 var greeting = greeter.GetMessageOfTheDay();
-                await context.Response.WriteAsync(greeting);
+                await context.Response.WriteAsync($"{greeting} : {env.EnvironmentName}");
             });
         }
     }
