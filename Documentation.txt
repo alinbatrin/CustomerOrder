@@ -2,3 +2,4 @@ Topics to read about
 
 1. Midleware -- ASP.NET Core Middleware
 				Article : https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-2.2
+2. Routes : conventional, attribute
