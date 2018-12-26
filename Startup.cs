@@ -18,6 +18,7 @@ namespace CustomerOrder
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IGreeter, Greeter>();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,8 +35,10 @@ namespace CustomerOrder
             }
 
             //app.UseDefaultFiles();
-            //app.UseStaticFiles();
-            app.UseFileServer();
+            //Goes direct to file
+            app.UseStaticFiles();
+            app.UseMvcWithDefaultRoute();
+            //app.UseFileServer();
 
             app.Run(async (context) =>
             {
