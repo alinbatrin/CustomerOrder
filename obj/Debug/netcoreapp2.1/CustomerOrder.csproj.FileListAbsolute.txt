@@ -12,3 +12,12 @@ C:\Alin\CoreRepo\CustomerOrder\CustomerOrder\CustomerOrder\obj\Debug\netcoreapp2
 C:\Alin\CoreRepo\CustomerOrder\CustomerOrder\CustomerOrder\obj\Debug\netcoreapp2.1\CustomerOrder.RazorTargetAssemblyInfo.cache
 C:\Alin\CoreRepo\CustomerOrder\CustomerOrder\CustomerOrder\obj\Debug\netcoreapp2.1\CustomerOrder.dll
 C:\Alin\CoreRepo\CustomerOrder\CustomerOrder\CustomerOrder\obj\Debug\netcoreapp2.1\CustomerOrder.pdb
+C:\Alin\CoreRepo\CustomerOrder\CustomerOrder\CustomerOrder\bin\Debug\netcoreapp2.1\CustomerOrder.Views.dll
+C:\Alin\CoreRepo\CustomerOrder\CustomerOrder\CustomerOrder\bin\Debug\netcoreapp2.1\CustomerOrder.Views.pdb
+C:\Alin\CoreRepo\CustomerOrder\CustomerOrder\CustomerOrder\obj\Debug\netcoreapp2.1\CustomerOrder.TagHelpers.input.cache
+C:\Alin\CoreRepo\CustomerOrder\CustomerOrder\CustomerOrder\obj\Debug\netcoreapp2.1\CustomerOrder.TagHelpers.output.cache
+C:\Alin\CoreRepo\CustomerOrder\CustomerOrder\CustomerOrder\obj\Debug\netcoreapp2.1\CustomerOrder.RazorCoreGenerate.cache
+C:\Alin\CoreRepo\CustomerOrder\CustomerOrder\CustomerOrder\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Alin\CoreRepo\CustomerOrder\CustomerOrder\CustomerOrder\obj\Debug\netcoreapp2.1\CustomerOrder.RazorTargetAssemblyInfo.cs
+C:\Alin\CoreRepo\CustomerOrder\CustomerOrder\CustomerOrder\obj\Debug\netcoreapp2.1\CustomerOrder.Views.pdb
+C:\Alin\CoreRepo\CustomerOrder\CustomerOrder\CustomerOrder\obj\Debug\netcoreapp2.1\CustomerOrder.csproj.CopyComplete

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<CustomerOrder.Models.Customer>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <table>
+        @foreach(var customer in Model)
+        {
+        <tr>
+            <td>@customer.ID</td>
+            <td>@customer.Name</td>
+        </tr>
+        }
+
+    </table>
+</body>
+</html>

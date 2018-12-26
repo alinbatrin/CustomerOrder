@@ -1,15 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CustomerOrder.Models;
+using CustomerOrder.Services;
+
 namespace CustomerOrder.Controllers
 {
     public class HomeController : Controller
     {
+        private ICustomerData _customerData;
+
+        public HomeController(ICustomerData customerData)
+        {
+            _customerData = customerData;
+        }
+
         public IActionResult Index()
         {
-            //return Content("Hello from the HomeController $$");
-            var model = new Customer { ID = 1, Name = "Ion" };
+            var model = _customerData.GetAll();
 
-            return new ObjectResult(model);
+            return View(model);
         }
     }
 }

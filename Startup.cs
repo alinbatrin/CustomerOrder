@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using CustomerOrder.Services;
 
 namespace CustomerOrder
 {
@@ -19,6 +20,7 @@ namespace CustomerOrder
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IGreeter, Greeter>();
+            services.AddScoped<ICustomerData, InMemoryCustomerData>();
             services.AddMvc();
         }
 

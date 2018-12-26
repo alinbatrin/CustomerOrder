@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace CustomerOrder
+namespace CustomerOrder.Services
 {
     //Custom service Greetings
     public interface IGreeter
