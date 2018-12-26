@@ -21,6 +21,7 @@ namespace CustomerOrder
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // A middleware make how app should respond at http request
         public void Configure(IApplicationBuilder app, 
                               IHostingEnvironment env, 
                               IGreeter greeter,
@@ -31,6 +32,10 @@ namespace CustomerOrder
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            //app.UseDefaultFiles();
+            //app.UseStaticFiles();
+            app.UseFileServer();
 
             app.Run(async (context) =>
             {
